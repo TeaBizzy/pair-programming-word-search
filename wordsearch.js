@@ -1,16 +1,25 @@
 const { transpose } = require("../matrix-transposition");
 
-const wordSearch = (letters, word) => { 
-    let horizontalJoin = letters.map(ls => ls.join(''))
+const wordSearch = (letters, word) => {
+    let horizontalJoin = letters.map(ls => ls.join('')) // Joins each "Row" of the letters matrix into a string, and maps those strings to a new array.
+    let horizontalReversed = reverseArray(horizontalJoin);
 
     let verticalJoin = transpose(letters);
-    verticalJoin = verticalJoin.map(ls => ls.join(''))
-    
-    let diagonalJoin = transposeDiagonal(letters);
-    diagonalJoin = diagonalJoin.map(ls => ls.join(''))
+    verticalJoin = verticalJoin.map(ls => ls.join('')) // Joins each "Row" of the transposed matrix into a string, and maps those strings to a new array.
+    let verticalReversed = reverseArray(verticalJoin);
 
-    let masterArray = horizontalJoin.concat(verticalJoin).concat(diagonalJoin);
+    let diagonalJoin = transposeDiagonal(letters);
+    diagonalJoin = diagonalJoin.map(ls => ls.join('')); // Joins each "Row" of the transposed matrix into a string, and maps those strings to a new array.
+    let diagonalReverse = reverseArray(diagonalJoin);
+
+    // Concat all arrays into one
+    let masterArray = horizontalJoin.concat(verticalJoin)
+        .concat(diagonalJoin)
+        .concat(horizontalReversed)
+        .concat(verticalReversed)
+        .concat(diagonalReverse);
     
+    // Check if the master array contains the word
     for (l of masterArray) {
         if (l.includes(word)) {
             return true;
@@ -19,6 +28,12 @@ const wordSearch = (letters, word) => {
     
     return false;
 }
+
+const reverseArray = function (array) {
+    let reversedArray = array.map((element) => element.split("").reverse().join(""));
+    return reversedArray;
+};
+
 
 // Returns a matrix of values grabbed diagonally from the given matrix
 const transposeDiagonal = function(letters) {
