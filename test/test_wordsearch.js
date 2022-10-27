@@ -1,7 +1,7 @@
 const chai = require('chai');
 const assert = chai.assert;
 
-const wordSearch = require('../wordsearch.js')
+const wordSearch = require('../wordsearch.js');
 
 describe("#wordSearch()", function() {
   it("should return false if FRANK is not present", function() {
@@ -15,7 +15,7 @@ describe("#wordSearch()", function() {
       ['N', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
       ['K', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
       ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
-    ], 'FRANK')
+    ], 'FRANK');
 
     assert.isFalse(result);
   });
@@ -31,7 +31,7 @@ describe("#wordSearch()", function() {
       ['U', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
       ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
       ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
-    ], 'SEINFELD')
+    ], 'SEINFELD');
 
     assert.isTrue(result);
   });
@@ -47,7 +47,7 @@ describe("#wordSearch()", function() {
       ['U', 'B', 'T', 'W', 'A', 'G', 'A', 'I'],
       ['O', 'D', 'C', 'A', 'K', 'O', 'A', 'S'],
       ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
-    ], 'VERTIGO')
+    ], 'VERTIGO');
 
     assert.isTrue(result);
   });
@@ -63,7 +63,7 @@ describe("#wordSearch()", function() {
       ['U', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
       ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
       ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
-    ], 'MANGO')
+    ], 'MANGO');
 
     assert.isTrue(result);
   });
@@ -79,7 +79,7 @@ describe("#wordSearch()", function() {
       ['U', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
       ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
       ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
-    ], 'PRESENT')
+    ], 'PRESENT');
 
     assert.isTrue(result);
   });
@@ -95,7 +95,7 @@ describe("#wordSearch()", function() {
       ['U', 'B', 'H', 'W', 'A', 'P', 'A', 'I'],
       ['O', 'D', 'G', 'A', 'K', 'U', 'A', 'S'],
       ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
-    ], 'GHOST')
+    ], 'GHOST');
 
     assert.isTrue(result);
   });
@@ -111,7 +111,7 @@ describe("#wordSearch()", function() {
       ['U', 'B', 'H', 'W', 'P', 'P', 'A', 'I'],
       ['O', 'D', 'G', 'A', 'K', 'S', 'A', 'S'],
       ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
-    ], 'ASPRIN')
+    ], 'ASPRIN');
 
     assert.isTrue(result);
   });
